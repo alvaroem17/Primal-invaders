@@ -3,14 +3,14 @@ Dodge the spears of the enemy tribe to survive and take the fruits to get life p
 Lets see how much time you can stay alive!
 
 # Keys to move: 
-W - up. 
-A - left. 
-S - down. 
-D - right.
+- W - up
+- A - left
+- S - down
+- D - right
 
 # Credits:
-Álvaro,
-Aythami,
-Arcadio.
+- Álvaro
+- Aythami
+- Arcadio
 
 First proyect made for Reboot Academy bootcamp.
