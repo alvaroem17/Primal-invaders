@@ -1,9 +1,14 @@
 import { Player } from "./player.js"
-
+import { Enemy } from "./enemy.js"
 
 
 var player1 = new Player()
 player1.insertPlayer()
+function newEnemy(){
+ var enemy1 = new Enemy()
+enemy1.insertEnemy()
+}
+
 
 window.addEventListener('keydown', function (e) {
     switch (e.key) {
@@ -27,5 +32,7 @@ window.addEventListener('keyup', function (e) {
 
 function start (){
     var timerIdPlayer = setInterval(player1.move, 10, player1.direction)
+    var timerIdEnemy = setInterval(newEnemy, 500)
 }
 start()
+
