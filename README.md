@@ -6,7 +6,7 @@ Lets see how much time you can stay alive!
 W - up. 
 A - left. 
 S - down. 
-D - Right.
+D - right.
 
 # Credits:
 Álvaro,
