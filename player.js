@@ -13,7 +13,6 @@ function Player() {
         mainBoard.appendChild(this.sprite)
     }
     this.move = function () {
-
         switch (self.direction) {
             case "up":
                 if (self.y > 0) {

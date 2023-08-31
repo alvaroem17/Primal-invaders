@@ -12,5 +12,14 @@ function Enemy() {
         this.sprite.style.left = this.x + 'px'
         mainBoard.appendChild(this.sprite)
     }
+    this.move = function(){
+        if (self.x > -150){
+            self.x -= 10
+            self.sprite.style.left = self.x + "px"
+        }else{
+            //self.remove()
+        }
+    }
+    this.timerId = setInterval(this.move, 30)
 }
 export { Enemy }
