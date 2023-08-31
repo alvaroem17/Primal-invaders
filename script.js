@@ -5,7 +5,7 @@ import { Enemy } from "./enemy.js"
 var player1 = new Player()
 player1.insertPlayer()
 function newEnemy(){
- var enemy1 = new Enemy()
+ var enemy1 = new Enemy(player1)
 enemy1.insertEnemy()
 }
 

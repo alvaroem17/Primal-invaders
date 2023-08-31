@@ -3,6 +3,8 @@ function Player() {
     var self = this
     this.x = 10
     this.y = 295
+    this.width = 50
+    this.height = 50
     this.direction = 0
     this.sprite = document.createElement('div')
 
