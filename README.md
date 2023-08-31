@@ -9,8 +9,8 @@ S - down.
 D - Right.
 
 # Credits:
-Álvaro
-Aythami
-Arcadio
+Álvaro,
+Aythami,
+Arcadio.
 
 First proyect made for Reboot Academy bootcamp.
