@@ -1,0 +1,19 @@
+main {
+    height: 680px;
+    width: 1320px;
+    background-color: lightcoral;
+    margin: 4rem auto;
+}
+
+#main-board {
+position: relative;
+width: 100%;
+height: 640px;
+background-color: rgb(77, 117, 77)
+}
+
+#score {
+    width: 100%;
+    height: 40px;
+    background-color: gray;
+}
