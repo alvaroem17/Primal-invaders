@@ -32,13 +32,11 @@ function Enemy(player) {
     }
     this.checkcollision = function() {
         if ( 
-            this.x + this.width <= player.x &&
+            this.x + this.width >= player.x &&
             this.x <= player.x + player.width
             &&
-            this.y + this.height <= player.y &&
+            this.y + this.height >= player.y &&
             this.y <= player.y + player.height
-            &&
-            //faltan 2 condiciones
         ) { 
             this.removeEnemy()
              }
