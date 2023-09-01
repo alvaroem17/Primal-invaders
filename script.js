@@ -40,7 +40,7 @@ function start() {
     var timerIdEnemy = setInterval(newEnemy, 500)
     var timerIdFruit = setInterval(newFruit, 10000)
 }
-start()
+
 
 function playerMovement() {
     if (player1.life === 0) {
@@ -50,3 +50,14 @@ function playerMovement() {
         player1.move()
     }
 }
+function empezar(){
+    var landing = document.getElementById('start')
+    landing.hidden = true
+    var game = document.getElementById('main')
+    game.hidden = false
+    start()
+}
+ var button = document.getElementById('btn')
+button.addEventListener('click', function(){
+    empezar()
+})
