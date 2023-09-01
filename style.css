@@ -20,6 +20,9 @@ overflow: hidden;
     width: 100%;
     height: 40px;
     background-color: gray;
+    display: flex;
+    justify-content: start;
+    align-items: center;
 }
 
 #player{
@@ -41,4 +44,12 @@ overflow: hidden;
     height: 25px;
     background: rgb(33, 231, 33);
     position: absolute;
+}
+
+.life {
+    height: 25px;
+    width: 25px;
+    margin-left: 1rem;
+    background-color: greenyellow;
+
 }

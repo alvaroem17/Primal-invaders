@@ -44,7 +44,7 @@ start()
 
 function playerMovement() {
     if (player1.life === 0) {
-        alert("Sa acabao")
+        /*alert("Sa acabao")*/
     }
     else {
         player1.move()

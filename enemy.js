@@ -40,6 +40,12 @@ function Enemy(player) {
         ) {
             this.removeEnemy()
             player.life = player.life - 1
+            var life  = document.getElementsByClassName("life")
+            var header  = document.getElementById("score")
+            header.removeChild(life[life.length-1])
+            console.log(life[life.length-1])
+            console.log(header)
+            
         }
     }
     this.timerId = setInterval(this.move, 30)
