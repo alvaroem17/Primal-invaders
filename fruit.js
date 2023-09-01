@@ -39,7 +39,15 @@ function Fruit(player) {
             this.y <= player.y + player.height
         ) {
             this.removeFruit()
-            player.life++
+
+
+            if (player.life < 3) {
+                player.life++
+                var addLife = document.createElement('div')
+                var header = document.getElementById("score")
+                addLife.classList.add('life')
+                header.appendChild(addLife)
+            }
         }
     }
     this.timerId = setInterval(this.move, 20)
