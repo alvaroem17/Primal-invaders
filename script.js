@@ -45,6 +45,7 @@ function start() {
 function playerMovement() {
     if (player1.life === 0) {
         /*alert("Sa acabao")*/
+        terminar()
     }
     else {
         player1.move()
@@ -61,3 +62,10 @@ function empezar(){
 button.addEventListener('click', function(){
     empezar()
 })
+
+function terminar(){
+    var game = document.getElementById('main')
+    game.hidden = true
+    var out = document.getElementById('over')
+    out.hidden = false
+ }
