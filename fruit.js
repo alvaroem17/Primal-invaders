@@ -39,6 +39,7 @@ function Fruit(player) {
             this.y <= player.y + player.height
         ) {
             this.removeFruit()
+            player.life++
         }
     }
     this.timerId = setInterval(this.move, 20)

@@ -6,6 +6,7 @@ function Player() {
     this.width = 50
     this.height = 50
     this.direction = 0
+    this.life = 3
     this.sprite = document.createElement('div')
 
     this.insertPlayer = function () {

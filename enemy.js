@@ -30,16 +30,17 @@ function Enemy(player) {
         clearInterval(this.timerId)
 
     }
-    this.checkcollision = function() {
-        if ( 
+    this.checkcollision = function () {
+        if (
             this.x + this.width >= player.x &&
             this.x <= player.x + player.width
             &&
             this.y + this.height >= player.y &&
             this.y <= player.y + player.height
-        ) { 
+        ) {
             this.removeEnemy()
-             }
+            player.life = player.life - 1
+        }
     }
     this.timerId = setInterval(this.move, 30)
 }
