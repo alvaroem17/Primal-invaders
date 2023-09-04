@@ -18,46 +18,14 @@ function Player() {
         mainBoard.appendChild(this.sprite)
     }
     this.move = function () {
-        /*switch (self.direction) {
-            case "up":
-                if (self.y > 0) {
-                    self.y = self.y - 5
-                    self.sprite.style.top = self.y + 'px'
-                }
-                break;
-            case "down":
-                if (self.y < 590) {
-                    self.y = self.y + 5
-                    self.sprite.style.top = self.y + 'px'
-                }
-                break;
-            case "left":
-                if (self.x > 0) {
-                    self.x = self.x - 5
-                    self.sprite.style.left = self.x + 'px'
-                }
-                break;
-            case "right":
-                if (self.x < 1270) {
-                    self.x = self.x + 5
-                    self.sprite.style.left = self.x + 'px'
-                }
-                break;
-        }*/
-        /*if(keypressed.a) {
-            self.directionX = -1
-        }else if(keypressed.d){
-            self.directionX = 1
+        var nextX = self.x + 5 * self.directionX
+        var nextY = self.y + 5 * self.directionY
+        if(nextX >= 0 && nextX <= 1270) {
+            self.x = nextX
         }
-        if(keypressed.w) {
-            self.directionY = -1
-        }else if(keypressed.s){
-            self.directionY = 1
-        }*/
-
-        self.x = self.x + 5 * self.directionX 
-        self.y = self.y + 5 * self.directionY
-
+        if(nextY >= 0 && nextY <= 590){
+            self.y = nextY
+        }
         self.sprite.style.left = self.x + 'px'
         self.sprite.style.top = self.y + 'px'
     }
