@@ -36,7 +36,8 @@
 #enemy {
     width: 150px;
     height: 10px;
-    background: red;
+    background-image: url('./assets/Spear.png');
+    background-size: contain;
     position: absolute;
 }
 

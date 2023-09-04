@@ -3,7 +3,7 @@ function Enemy(player) {
     var self = this
     this.x = 1320
     this.y = Math.ceil(Math.random() * 630)
-    this.width = 150
+   Ñ this.width = 150
     this.height = 10
     this.direction = 0
     this.sprite = document.createElement('div')
