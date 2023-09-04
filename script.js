@@ -14,22 +14,9 @@ function newFruit() {
     fruit1.insertFruit()
 }
 
-//var keypressed = { a:false, w:false, s:false, d:false}
+
 window.addEventListener('keydown', function (e) {
-    /*switch (e.key) {
-        case "a":
-            keypressed.a = true
-            break;
-        case "d":
-            keypressed.d = true
-            break;
-        case "w":
-            keypressed.w = true
-            break;
-        case "s":
-            keypressed.s = true
-            break;
-    }*/
+  
     switch (e.key) {
         case "a":
             player1.directionX = -1
@@ -48,20 +35,19 @@ window.addEventListener('keydown', function (e) {
 window.addEventListener('keyup', function (e) {
     switch (e.key) {
         case "a":
-            player1.directionX = 0
+            player1.directionX = Math.max(player1.directionX, 0)
             break;
         case "d":
-            player1.directionX = 0
+            player1.directionX = Math.min(player1.directionX, 0)
             break;
-        case "w":
-            player1.directionY = 0
-            break;
-        case "s":
-            player1.directionY = 0
-            break;
+            case "w":
+                player1.directionY = Math.max(player1.directionY, 0)
+                break;
+            case "s":
+                player1.directionY = Math.min(player1.directionY, 0)
+                break;
     }
-    //player1.directionX = 0
-    //player1.directionY = 0
+    
 })
 
 function start() {
@@ -73,11 +59,10 @@ function start() {
 
 function playerMovement() {
     if (player1.life === 0) {
-        /*alert("Sa acabao")*/
+        /*alert("Se acabó")*/
         terminar()
     }
     else {
-        //player1.directionX = 
         player1.move()
     }
 }
