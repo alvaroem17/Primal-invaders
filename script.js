@@ -5,6 +5,7 @@ import { Fruit } from "./fruit.js"
 
 var player1 = new Player()
 player1.insertPlayer()
+
 function newEnemy() {
     var enemy1 = new Enemy(player1)
     enemy1.insertEnemy()
@@ -47,22 +48,26 @@ window.addEventListener('keyup', function (e) {
             player1.directionY = Math.min(player1.directionY, 0)
             break;
     }
-
 })
+var timerIdPlayer
+var timerIdEnemy
+var timerIdFruit
 
 function start() {
-    var timerIdPlayer = setInterval(playerMovement, 10)
-    var timerIdEnemy = setInterval(newEnemy, 500)
-    var timerIdFruit = setInterval(newFruit, 10000)
+    timerIdPlayer = setInterval(playerMovement, 10)
+    timerIdEnemy = setInterval(newEnemy, 500)
+    timerIdFruit = setInterval(newFruit, 10000)
     initialLives()
-
+    player1.x = 10
+    player1.y = 295
+    player1.life = 3
 }
 
 
 function playerMovement() {
     if (player1.life === 0) {
         /*alert("Se acabó")*/
-        terminar()
+        terminar(timerIdPlayer, timerIdEnemy, timerIdFruit)
     }
     else {
         player1.move()
@@ -82,21 +87,24 @@ button.addEventListener('click', function () {
 
 var restart = document.getElementById('restart')
 restart.addEventListener('click', function () {
-    resetGame()
+    var out = document.getElementById('over')
+    out.hidden = true
     empezar()
 })
 
-function terminar() {
+function terminar(a, b, c) {
     var game = document.getElementById('main')
     game.hidden = true
     var out = document.getElementById('over')
     out.hidden = false
-}
-
-function resetGame() {
-   
-
-    initialLives()
+    clearInterval(a)
+    clearInterval(b)
+    clearInterval(c)
+    var child = document.querySelectorAll("#main-board div:not(#player)")
+    var mainboard = document.getElementById("main-board")
+    for (let i = 0; i < child.length; i++ ) {
+        mainboard.removeChild(child[i])
+    }
 }
 
 function initialLives() {
@@ -107,7 +115,7 @@ function initialLives() {
     addLife2.classList.add('life')
     var addLife3 = document.createElement('div')
     addLife3.classList.add('life')
-    
+
     header.appendChild(addLife1)
     header.appendChild(addLife2)
     header.appendChild(addLife3)
