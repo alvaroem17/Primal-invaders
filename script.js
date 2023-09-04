@@ -16,7 +16,7 @@ function newFruit() {
 
 
 window.addEventListener('keydown', function (e) {
-  
+
     switch (e.key) {
         case "a":
             player1.directionX = -1
@@ -40,20 +40,22 @@ window.addEventListener('keyup', function (e) {
         case "d":
             player1.directionX = Math.min(player1.directionX, 0)
             break;
-            case "w":
-                player1.directionY = Math.max(player1.directionY, 0)
-                break;
-            case "s":
-                player1.directionY = Math.min(player1.directionY, 0)
-                break;
+        case "w":
+            player1.directionY = Math.max(player1.directionY, 0)
+            break;
+        case "s":
+            player1.directionY = Math.min(player1.directionY, 0)
+            break;
     }
-    
+
 })
 
 function start() {
     var timerIdPlayer = setInterval(playerMovement, 10)
     var timerIdEnemy = setInterval(newEnemy, 500)
     var timerIdFruit = setInterval(newFruit, 10000)
+    initialLives()
+
 }
 
 
@@ -66,7 +68,7 @@ function playerMovement() {
         player1.move()
     }
 }
-function empezar(){
+function empezar() {
     var landing = document.getElementById('start')
     landing.hidden = true
     var game = document.getElementById('main')
@@ -74,18 +76,40 @@ function empezar(){
     start()
 }
 var button = document.getElementById('btn')
-button.addEventListener('click', function(){
+button.addEventListener('click', function () {
     empezar()
 })
 
 var restart = document.getElementById('restart')
-restart.addEventListener('click', function(){
-
+restart.addEventListener('click', function () {
+    resetGame()
+    empezar()
 })
 
-function terminar(){
+function terminar() {
     var game = document.getElementById('main')
     game.hidden = true
     var out = document.getElementById('over')
     out.hidden = false
 }
+
+function resetGame() {
+   
+
+    initialLives()
+}
+
+function initialLives() {
+    var header = document.getElementById('score')
+    var addLife1 = document.createElement('div')
+    addLife1.classList.add('life')
+    var addLife2 = document.createElement('div')
+    addLife2.classList.add('life')
+    var addLife3 = document.createElement('div')
+    addLife3.classList.add('life')
+    
+    header.appendChild(addLife1)
+    header.appendChild(addLife2)
+    header.appendChild(addLife3)
+}
+
