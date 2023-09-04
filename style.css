@@ -1,4 +1,8 @@
-main {
+* {
+    margin: 0;
+}
+
+#main {
     height: 680px;
     width: 1320px;
     background-color: lightcoral;
@@ -6,14 +10,73 @@ main {
 }
 
 #main-board {
-position: relative;
-width: 100%;
-height: 640px;
-background-color: rgb(77, 117, 77)
+    position: relative;
+    width: 100%;
+    height: 640px;
+    background-color: rgb(77, 117, 77);
+    overflow: hidden;
 }
 
 #score {
     width: 100%;
     height: 40px;
     background-color: gray;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+#player {
+    width: 50px;
+    height: 50px;
+    background: blue;
+    position: absolute;
+}
+
+#enemy {
+    width: 150px;
+    height: 10px;
+    background: red;
+    position: absolute;
+}
+
+#fruit {
+    width: 25px;
+    height: 25px;
+    background: rgb(33, 231, 33);
+    position: absolute;
+}
+
+.life {
+    height: 25px;
+    width: 25px;
+    margin-left: 1rem;
+    background-color: greenyellow;
+
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 10vh;
+
+}
+
+#start{
+    /*display: flex; */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 90vh;
+}
+
+#over {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 90vh;
 }
