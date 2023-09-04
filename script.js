@@ -14,25 +14,54 @@ function newFruit() {
     fruit1.insertFruit()
 }
 
-
+//var keypressed = { a:false, w:false, s:false, d:false}
 window.addEventListener('keydown', function (e) {
-    switch (e.key) {
+    /*switch (e.key) {
         case "a":
-            player1.direction = "left"
+            keypressed.a = true
             break;
         case "d":
-            player1.direction = "right"
+            keypressed.d = true
             break;
         case "w":
-            player1.direction = "up"
+            keypressed.w = true
             break;
         case "s":
-            player1.direction = "down"
+            keypressed.s = true
+            break;
+    }*/
+    switch (e.key) {
+        case "a":
+            player1.directionX = -1
+            break;
+        case "d":
+            player1.directionX = 1
+            break;
+        case "w":
+            player1.directionY = -1
+            break;
+        case "s":
+            player1.directionY = 1
             break;
     }
 })
 window.addEventListener('keyup', function (e) {
-    player1.direction = 0
+    switch (e.key) {
+        case "a":
+            player1.directionX = 0
+            break;
+        case "d":
+            player1.directionX = 0
+            break;
+        case "w":
+            player1.directionY = 0
+            break;
+        case "s":
+            player1.directionY = 0
+            break;
+    }
+    //player1.directionX = 0
+    //player1.directionY = 0
 })
 
 function start() {
@@ -48,6 +77,7 @@ function playerMovement() {
         terminar()
     }
     else {
+        //player1.directionX = 
         player1.move()
     }
 }
@@ -58,9 +88,14 @@ function empezar(){
     game.hidden = false
     start()
 }
- var button = document.getElementById('btn')
+var button = document.getElementById('btn')
 button.addEventListener('click', function(){
     empezar()
+})
+
+var restart = document.getElementById('restart')
+restart.addEventListener('click', function(){
+
 })
 
 function terminar(){
@@ -68,4 +103,4 @@ function terminar(){
     game.hidden = true
     var out = document.getElementById('over')
     out.hidden = false
- }
+}
