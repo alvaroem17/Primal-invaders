@@ -5,6 +5,7 @@ import { Fruit } from "./fruit.js"
 
 var player1 = new Player()
 player1.insertPlayer()
+
 function newEnemy() {
     var enemy1 = new Enemy(player1)
     enemy1.insertEnemy()
@@ -14,22 +15,9 @@ function newFruit() {
     fruit1.insertFruit()
 }
 
-//var keypressed = { a:false, w:false, s:false, d:false}
+
 window.addEventListener('keydown', function (e) {
-    /*switch (e.key) {
-        case "a":
-            keypressed.a = true
-            break;
-        case "d":
-            keypressed.d = true
-            break;
-        case "w":
-            keypressed.w = true
-            break;
-        case "s":
-            keypressed.s = true
-            break;
-    }*/
+
     switch (e.key) {
         case "a":
             player1.directionX = -1
@@ -48,40 +36,44 @@ window.addEventListener('keydown', function (e) {
 window.addEventListener('keyup', function (e) {
     switch (e.key) {
         case "a":
-            player1.directionX = 0
+            player1.directionX = Math.max(player1.directionX, 0)
             break;
         case "d":
-            player1.directionX = 0
+            player1.directionX = Math.min(player1.directionX, 0)
             break;
         case "w":
-            player1.directionY = 0
+            player1.directionY = Math.max(player1.directionY, 0)
             break;
         case "s":
-            player1.directionY = 0
+            player1.directionY = Math.min(player1.directionY, 0)
             break;
     }
-    //player1.directionX = 0
-    //player1.directionY = 0
 })
+var timerIdPlayer
+var timerIdEnemy
+var timerIdFruit
 
 function start() {
-    var timerIdPlayer = setInterval(playerMovement, 10)
-    var timerIdEnemy = setInterval(newEnemy, 500)
-    var timerIdFruit = setInterval(newFruit, 10000)
+    timerIdPlayer = setInterval(playerMovement, 10)
+    timerIdEnemy = setInterval(newEnemy, 500)
+    timerIdFruit = setInterval(newFruit, 10000)
+    initialLives()
+    player1.x = 10
+    player1.y = 295
+    player1.life = 3
 }
 
 
 function playerMovement() {
     if (player1.life === 0) {
-        /*alert("Sa acabao")*/
-        terminar()
+        /*alert("Se acabó")*/
+        terminar(timerIdPlayer, timerIdEnemy, timerIdFruit)
     }
     else {
-        //player1.directionX = 
         player1.move()
     }
 }
-function empezar(){
+function empezar() {
     var landing = document.getElementById('start')
     landing.hidden = true
     var game = document.getElementById('main')
@@ -89,18 +81,43 @@ function empezar(){
     start()
 }
 var button = document.getElementById('btn')
-button.addEventListener('click', function(){
+button.addEventListener('click', function () {
     empezar()
 })
 
 var restart = document.getElementById('restart')
-restart.addEventListener('click', function(){
-
+restart.addEventListener('click', function () {
+    var out = document.getElementById('over')
+    out.hidden = true
+    empezar()
 })
 
-function terminar(){
+function terminar(a, b, c) {
     var game = document.getElementById('main')
     game.hidden = true
     var out = document.getElementById('over')
     out.hidden = false
+    clearInterval(a)
+    clearInterval(b)
+    clearInterval(c)
+    var child = document.querySelectorAll("#main-board div:not(#player)")
+    var mainboard = document.getElementById("main-board")
+    for (let i = 0; i < child.length; i++ ) {
+        mainboard.removeChild(child[i])
+    }
 }
+
+function initialLives() {
+    var header = document.getElementById('score')
+    var addLife1 = document.createElement('div')
+    addLife1.classList.add('life')
+    var addLife2 = document.createElement('div')
+    addLife2.classList.add('life')
+    var addLife3 = document.createElement('div')
+    addLife3.classList.add('life')
+
+    header.appendChild(addLife1)
+    header.appendChild(addLife2)
+    header.appendChild(addLife3)
+}
+
