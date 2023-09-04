@@ -5,7 +5,9 @@ function Player() {
     this.y = 295
     this.width = 50
     this.height = 50
-    this.direction = 0
+    //this.direction = 0
+    this.directionY = 0 
+    this.directionX = 0
     this.life = 3
     this.sprite = document.createElement('div')
 
@@ -16,7 +18,7 @@ function Player() {
         mainBoard.appendChild(this.sprite)
     }
     this.move = function () {
-        switch (self.direction) {
+        /*switch (self.direction) {
             case "up":
                 if (self.y > 0) {
                     self.y = self.y - 5
@@ -41,7 +43,23 @@ function Player() {
                     self.sprite.style.left = self.x + 'px'
                 }
                 break;
+        }*/
+        /*if(keypressed.a) {
+            self.directionX = -1
+        }else if(keypressed.d){
+            self.directionX = 1
         }
+        if(keypressed.w) {
+            self.directionY = -1
+        }else if(keypressed.s){
+            self.directionY = 1
+        }*/
+
+        self.x = self.x + 5 * self.directionX 
+        self.y = self.y + 5 * self.directionY
+
+        self.sprite.style.left = self.x + 'px'
+        self.sprite.style.top = self.y + 'px'
     }
 
 }
