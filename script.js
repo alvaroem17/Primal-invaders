@@ -14,22 +14,9 @@ function newFruit() {
     fruit1.insertFruit()
 }
 
-//var keypressed = { a:false, w:false, s:false, d:false}
+
 window.addEventListener('keydown', function (e) {
-    /*switch (e.key) {
-        case "a":
-            keypressed.a = true
-            break;
-        case "d":
-            keypressed.d = true
-            break;
-        case "w":
-            keypressed.w = true
-            break;
-        case "s":
-            keypressed.s = true
-            break;
-    }*/
+  
     switch (e.key) {
         case "a":
             player1.directionX = -1
