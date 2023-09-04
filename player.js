@@ -3,8 +3,8 @@ function Player() {
     var self = this
     this.x = 10
     this.y = 295
-    this.width = 50
-    this.height = 50
+    this.width = 100
+    this.height = 100
     //this.direction = 0
     this.directionY = 0 
     this.directionX = 0
