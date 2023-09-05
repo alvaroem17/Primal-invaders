@@ -6,6 +6,7 @@ function Enemy(player) {
     this.width = 150
     this.height = 10
     this.direction = 0
+    this.speed = player.enemySpeed
     this.sprite = document.createElement('div')
 
     this.insertEnemy = function () {
@@ -17,7 +18,7 @@ function Enemy(player) {
     this.move = function () {
         self.checkcollision()
         if (self.x > -150) {
-            self.x -= 10
+            self.x -= 10 * self.speed
             self.sprite.style.left = self.x + "px"
         } else {
             self.removeEnemy()
