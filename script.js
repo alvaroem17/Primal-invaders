@@ -12,7 +12,10 @@ var game = document.getElementById('main')
 var mainboard = document.getElementById("main-board")
 var out = document.getElementById('over')
 var header = document.getElementById('score')
-
+var music = new Audio("./assets/sound/Primitive_mountain.mp3")
+var deadsound = new Audio("./assets/sound/Villager_killed.mp3")
+var endMusic = new Audio('./assets/sound/deathSound.mp3')
+endMusic.volume = 0.1;
 
 //Create Mainboard elements
 var player1 = new Player()
@@ -108,6 +111,7 @@ function showMainboard() {
 function finish(a, b, c) {
     game.hidden = true
     out.hidden = false
+    endMusic.play()
     clearInterval(a)
     clearInterval(b)
     clearInterval(c)
@@ -131,6 +135,3 @@ function initialLives() {
     header.appendChild(addLife2)
     header.appendChild(addLife3)
 }
-
-var music = new Audio("./Primitive_mountain.mp3")
-var deadsound = new Audio("./Villager_killed.mp3")
