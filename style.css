@@ -13,6 +13,7 @@ body{
     width: 1320px;
     background-color: lightcoral;
     margin: 4rem auto;
+    box-shadow: 1px 1px 10px 10px  black;
 }
 
 #container{
@@ -117,10 +118,9 @@ footer {
     background-position-y: -200px;
     padding:0;
     margin:0;
-    /*flex-direction: column;*/
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     height: 90vh;
-    
 }
