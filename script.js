@@ -6,6 +6,7 @@ import { Fruit } from "./fruit.js"
 var timerIdPlayer
 var timerIdEnemy
 var timerIdFruit
+var speedTimer
 var landing = document.getElementById('start')
 var game = document.getElementById('main')
 var mainboard = document.getElementById("main-board")
@@ -16,6 +17,7 @@ var header = document.getElementById('score')
 //Create Mainboard elements
 var player1 = new Player()
 player1.insertPlayer()
+speedTimer = setInterval(player1.speedUp, 10000)
 
 function newEnemy() {
     var enemy1 = new Enemy(player1)
@@ -79,9 +81,11 @@ function start() {
     timerIdFruit = setInterval(newFruit, 10000)
     initialLives()
     music.play()
+
     player1.x = 10
     player1.y = 295
     player1.life = 3
+    player1.enemySpeed = 1
 }
 
 // Check if player has life
