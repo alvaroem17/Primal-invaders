@@ -58,6 +58,7 @@ function start() {
     timerIdEnemy = setInterval(newEnemy, 500)
     timerIdFruit = setInterval(newFruit, 10000)
     initialLives()
+    music.play()
     player1.x = 10
     player1.y = 295
     player1.life = 3
@@ -100,9 +101,11 @@ function terminar(a, b, c) {
     clearInterval(a)
     clearInterval(b)
     clearInterval(c)
+    music.pause()
+    music.currentTime = 0
     var child = document.querySelectorAll("#main-board div:not(#player)")
     var mainboard = document.getElementById("main-board")
-    for (let i = 0; i < child.length; i++ ) {
+    for (let i = 0; i < child.length; i++) {
         mainboard.removeChild(child[i])
     }
 }
@@ -121,3 +124,4 @@ function initialLives() {
     header.appendChild(addLife3)
 }
 
+var music = new Audio("./Primitive_mountain.mp3")
