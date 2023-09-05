@@ -103,6 +103,7 @@ function terminar(a, b, c) {
     clearInterval(c)
     music.pause()
     music.currentTime = 0
+    deadsound.play()
     var child = document.querySelectorAll("#main-board div:not(#player)")
     var mainboard = document.getElementById("main-board")
     for (let i = 0; i < child.length; i++) {
@@ -125,3 +126,4 @@ function initialLives() {
 }
 
 var music = new Audio("./Primitive_mountain.mp3")
+var deadsound = new Audio("./Villager_killed.mp3")
