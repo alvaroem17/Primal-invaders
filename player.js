@@ -5,11 +5,14 @@ function Player() {
     this.y = 295
     this.width = 100
     this.height = 100
-    //this.direction = 0
     this.directionY = 0 
     this.directionX = 0
     this.life = 3
     this.sprite = document.createElement('div')
+    this.enemySpeed = 1
+    this.speedUp = function(){
+        self.enemySpeed *= 1.2
+    }
 
     this.insertPlayer = function () {
         this.sprite.setAttribute('id', 'player')
