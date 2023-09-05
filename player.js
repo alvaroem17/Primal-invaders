@@ -5,7 +5,6 @@ function Player() {
     this.y = 295
     this.width = 50
     this.height = 50
-    //this.direction = 0
     this.directionY = 0 
     this.directionX = 0
     this.life = 3
