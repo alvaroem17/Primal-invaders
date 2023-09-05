@@ -111,12 +111,9 @@ footer {
 #over {
     background-image: url('./assets/Death.gif');
     background-size: cover;
+    background-repeat: no-repeat;
     padding:0;
     margin:0;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+ 
     height: 90vh;
-    
 }
