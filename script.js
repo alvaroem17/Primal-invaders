@@ -2,7 +2,8 @@ import { Player } from "./player.js"
 import { Enemy } from "./enemy.js"
 import { Fruit } from "./fruit.js"
 
-
+var endMusic = new Audio('./assets/sound/deathSound.mp3')
+endMusic.volume = 0.1;
 var player1 = new Player()
 player1.insertPlayer()
 
@@ -97,6 +98,7 @@ function terminar(a, b, c) {
     game.hidden = true
     var out = document.getElementById('over')
     out.hidden = false
+    endMusic.play()
     clearInterval(a)
     clearInterval(b)
     clearInterval(c)
@@ -120,4 +122,3 @@ function initialLives() {
     header.appendChild(addLife2)
     header.appendChild(addLife3)
 }
-
