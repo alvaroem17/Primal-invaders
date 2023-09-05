@@ -12,8 +12,8 @@ var game = document.getElementById('main')
 var mainboard = document.getElementById("main-board")
 var out = document.getElementById('over')
 var header = document.getElementById('score')
-var music = new Audio("./Primitive_mountain.mp3")
-var deadsound = new Audio("./Villager_killed.mp3")
+var music = new Audio("./assets/sound/Primitive_mountain.mp3")
+var deadsound = new Audio("./assets/sound/Villager_killed.mp3")
 var endMusic = new Audio('./assets/sound/deathSound.mp3')
 endMusic.volume = 0.1;
 

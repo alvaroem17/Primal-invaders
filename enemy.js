@@ -44,14 +44,11 @@ function Enemy(player) {
             collisionsound.play()
             var life  = document.getElementsByClassName("life")
             var header  = document.getElementById("score")
-            header.removeChild(life[life.length-1])
-            console.log(life[life.length-1])
-            console.log(header)
-            
+            header.removeChild(life[life.length-1])            
         }
     }
     this.timerId = setInterval(this.move, 30)
 }
-var collisionsound = new Audio("./Villager_collision.mp3")
+var collisionsound = new Audio("./assets/sound/Villager_collision.mp3")
 
 export { Enemy }
