@@ -43,6 +43,7 @@ function Fruit(player) {
 
             if (player.life < 3) {
                 player.life++
+                munch.play()
                 var addLife = document.createElement('div')
                 var header = document.getElementById("score")
                 addLife.classList.add('life')
@@ -52,4 +53,5 @@ function Fruit(player) {
     }
     this.timerId = setInterval(this.move, 20)
 }
+var munch = new Audio("./assets/sound/munch.mp3")
 export { Fruit }

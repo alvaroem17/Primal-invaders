@@ -36,7 +36,9 @@ ul{
     position: relative;
     width: 100%;
     height: 640px;
-    background-image: url('./assets/mainBoard.jpg');
+    background-image: url('./assets/fondo.png');
+    background-position: 0 -250px;
+    background-repeat: no-repeat;
     overflow: hidden;
 }
 
@@ -52,11 +54,10 @@ ul{
 #player {
     width: 100px;
     height: 100px;
-    background-image: url("./assets/Player.png");
-    background-size: cover;
+    background-image: url("./assets/cavem.png");
+    background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
-    border:
 }
 
 #enemy {
@@ -71,6 +72,7 @@ ul{
     width: 25px;
     height: 25px;
     background-image: url("./assets/Fruit.png");
+    background-position-y: -5px;
     position: absolute;
     background-size: cover;
 }
@@ -111,9 +113,11 @@ footer {
 #over {
     background-image: url('./assets/Death.gif');
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: -200px;
     padding:0;
     margin:0;
-    flex-direction: column;
+    /*flex-direction: column;*/
     justify-content: center;
     align-items: center;
     text-align: center;
