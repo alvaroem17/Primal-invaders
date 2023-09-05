@@ -6,6 +6,7 @@ function Enemy(player) {
     this.width = 150
     this.height = 10
     this.direction = 0
+    this.speed = player.enemySpeed
     this.sprite = document.createElement('div')
 
     this.insertEnemy = function () {
@@ -17,7 +18,7 @@ function Enemy(player) {
     this.move = function () {
         self.checkcollision()
         if (self.x > -150) {
-            self.x -= 10
+            self.x -= 10 * self.speed
             self.sprite.style.left = self.x + "px"
         } else {
             self.removeEnemy()
@@ -40,14 +41,14 @@ function Enemy(player) {
         ) {
             this.removeEnemy()
             player.life = player.life - 1
+            collisionsound.play()
             var life  = document.getElementsByClassName("life")
             var header  = document.getElementById("score")
-            header.removeChild(life[life.length-1])
-            console.log(life[life.length-1])
-            console.log(header)
-            
+            header.removeChild(life[life.length-1])            
         }
     }
     this.timerId = setInterval(this.move, 30)
 }
+var collisionsound = new Audio("./assets/sound/Villager_collision.mp3")
+
 export { Enemy }
