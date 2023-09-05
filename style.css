@@ -2,6 +2,12 @@
     margin: 0;
 }
 
+body{
+    background-image: url("./assets/landing.png");
+    z-index: -1;
+    color: aliceblue;
+}
+
 #main {
     height: 680px;
     width: 1320px;
@@ -9,11 +15,28 @@
     margin: 4rem auto;
 }
 
+#container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    text-align:justify;
+}
+
 #main-board {
     position: relative;
     width: 100%;
     height: 640px;
-    background-color: rgb(77, 117, 77);
+    background-image: url('./assets/mainBoard.jpg');
     overflow: hidden;
 }
 
@@ -27,32 +50,44 @@
 }
 
 #player {
-    width: 50px;
-    height: 50px;
-    background: blue;
+    width: 100px;
+    height: 100px;
+    background-image: url("./assets/Player.png");
+    background-size: cover;
+    background-repeat: no-repeat;
     position: absolute;
+    border:
 }
 
 #enemy {
     width: 150px;
     height: 10px;
-    background: red;
+    background-image: url('./assets/Spear.png');
+    background-size: contain;
     position: absolute;
 }
 
 #fruit {
     width: 25px;
     height: 25px;
-    background: rgb(33, 231, 33);
+    background-image: url("./assets/Fruit.png");
     position: absolute;
+    background-size: cover;
 }
 
 .life {
     height: 25px;
     width: 25px;
     margin-left: 1rem;
-    background-color: greenyellow;
+    background-image: url('./assets/Heart.png');
+    background-size: cover;
+    animation: beat 0.5s infinite alternate;
+}
 
+@keyframes beat {
+    to {
+        transform: scale(1.1);
+    }
 }
 
 footer {
@@ -61,7 +96,7 @@ footer {
     align-items: center;
     text-align: center;
     height: 10vh;
-
+    flex-direction: column;
 }
 
 #start{
@@ -74,9 +109,14 @@ footer {
 }
 
 #over {
+    background-image: url('./assets/Death.gif');
+    background-size: cover;
+    padding:0;
+    margin:0;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     height: 90vh;
+    
 }
