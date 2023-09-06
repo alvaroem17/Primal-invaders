@@ -70,9 +70,10 @@ ul{
 #player {
     width: 100px;
     height: 100px;
-    background-image: url("./assets/cavem.png");
-    background-size: contain;
+    background-image: url("./assets/Idle\(1\).png");
+    background-size: cover;
     background-repeat: no-repeat;
+    border: 1px solid red;
     position: absolute;
 }
 
