@@ -50,5 +50,5 @@ function Enemy(player) {
     this.timerId = setInterval(this.move, 30)
 }
 var collisionsound = new Audio("./assets/sound/Villager_collision.mp3")
-
+collisionsound.volume = 0.1
 export { Enemy }
