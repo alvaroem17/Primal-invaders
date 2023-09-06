@@ -61,17 +61,32 @@ ul{
 #score {
     width: 100%;
     height: 40px;
-    background-color: gray;
+    background-image:url("./assets/scoreImage.jpg");
+    background-size: contain;
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
+}
+
+#timer{
+    height: 100%;
+    line-height: 2rem;
+    padding-right: 3rem;
+    font-family:'Roboto Mono', monospace;
+    font-stretch: expanded;
+    width: 6rem;
+    text-align: center;
+}
+
+#lifes{
+    display: flex;
 }
 
 #player {
     width: 100px;
     height: 100px;
-    background-image: url("./assets/cavem.png");
-    background-size: contain;
+    background-image: url("./assets/Idle\(1\).png");
+    background-size: cover;
     background-repeat: no-repeat;
     position: absolute;
 }
