@@ -43,7 +43,7 @@ function Enemy(player) {
             player.life = player.life - 1
             collisionsound.play()
             var life  = document.getElementsByClassName("life")
-            var header  = document.getElementById("score")
+            var header  = document.getElementById("lifes")
             header.removeChild(life[life.length-1])            
         }
     }

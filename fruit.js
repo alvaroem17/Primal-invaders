@@ -45,7 +45,7 @@ function Fruit(player) {
                 player.life++
                 munch.play()
                 var addLife = document.createElement('div')
-                var header = document.getElementById("score")
+                var header = document.getElementById("lifes")
                 addLife.classList.add('life')
                 header.appendChild(addLife)
             }
