@@ -54,4 +54,5 @@ function Fruit(player) {
     this.timerId = setInterval(this.move, 20)
 }
 var munch = new Audio("./assets/sound/munch.mp3")
+munch.volume = 0.1
 export { Fruit }
